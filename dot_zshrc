@@ -1,0 +1,68 @@
+export ZSH="$HOME/.oh-my-zsh"
+
+# ZSH_THEME="cloud"
+# ZSH_THEME="suvash"
+# ZSH_THEME="intheloop"
+# ZSH_THEME="gnzh"
+# ZSH_THEME="duellj"
+ZSH_THEME="agnoster"
+
+# Path
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+# Plugins
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+plugins=(
+	git
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+)
+
+source $ZSH/oh-my-zsh.sh
+source /home/ther/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.sh
+
+# config
+alias vim="nvim"
+alias zshconfig="vim ~/.zshrc"
+alias zshsource="source ~/.zshrc"
+alias vimcl="cd /home/ther/.config/nvim"
+alias awesomecl="cd /home/ther/.config/awesome"
+
+# ls
+alias cls="clear"
+alias ls="logo-ls"
+alias ll="exa -la"
+
+# proxy
+alias hp="export http_proxy=localhost:20171 && export https_proxy=localhost:20171"
+alias uhp="unset http_proxy && unset https_proxy"
+
+# fuck
+eval $(thefuck --alias)
+
+# tmux
+# session
+alias tsn="tmux new"
+alias tsnn="tmux new -s"
+alias tsd="tmux detach"
+alias tsl="tmux list-session"
+alias tsa="tmux attach -t"
+alias tsk="tmux kill-session -t"
+alias tsw="tmux switch -t"
+alias tsrnm="tmux rename-session -t"
+# windows-split
+alias tws="tmux split-window"
+alias twsh="tmux split-window -h"
+alias twk="tmux select-pane -U"
+alias twj="tmux select-pane -D"
+alias twh="tmux select-pane -L"
+alias twl="tmux select-pane -R"
+#windows
+alias twn="tmux new-window"
+alias twnn="tmux new-window -n"
+alias twa="tmux select-window -t"
+alias twrnm="tmux rename-window"
+
+alias ch="chezmoi"
