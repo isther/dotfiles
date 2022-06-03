@@ -3,16 +3,17 @@
 ##################
 #   startup
 ##################
-xrdb $HOME/.Xresources
-$HOME/.config/polybar/launch.sh &
-nitrogen --restore &
-picom -f &
-sxhkd &
+startup() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
+startup xrdb $HOME/.Xresources
+startup $HOME/.config/polybar/launch.sh 
+startup nitrogen --restore 
+startup picom -f 
+startup sxhkd 
 
 
 bspc monitor -d I II III IV V VI VII VIII #IX X
 bspc config border_width         2
-bspc config window_gap           25
+bspc config window_gap           12
 out = 2
 bspc config bottom_padding $(( $(polybar --dump=height base 2>/dev/null) + $(polybar --dump=offset-y base 2>/dev/null)+ $out))
 
