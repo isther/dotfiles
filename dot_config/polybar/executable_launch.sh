@@ -7,7 +7,8 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 polybar -r bspwm &
-polybar -r xwindow &
+polybar -r network &
+polybar -r player &
 polybar -r other &
 
 echo "Polybar launched..."
