@@ -66,3 +66,7 @@ alias twa="tmux select-window -t"
 alias twrnm="tmux rename-window"
 
 alias ch="chezmoi"
+
+alias kssh="kitty +kitten ssh"
+
+alias esptool="esptool.py"

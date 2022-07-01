@@ -3,6 +3,7 @@
 ##################
 #   startup
 ##################
+wmname LG3D
 startup() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 startup xrdb $HOME/.Xresources
 startup $HOME/.config/polybar/launch.sh 
